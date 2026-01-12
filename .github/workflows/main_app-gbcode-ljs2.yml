@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - app-gbcode-ljs2
+name: Build and deploy Node.js app to Azure Web App - app-gbcode-ljs2(staging)
 
 on:
   push:
@@ -49,8 +49,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'app-gbcode-ljs2'
+          app-name: 'app-gbcode-ljs2(staging)'
           slot-name: 'staging'
           package: .
-
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EBB5E17E951D4A408E9D2A92995745D7 }}
+          publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
